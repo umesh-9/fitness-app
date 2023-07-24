@@ -1,5 +1,20 @@
+import { Box } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
+import ExerciseDetail from "./Pages/ExerciseDetail";
+import Home from "./Pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 function App() {
-  return <h1>HELLO AP BYE BYE YCP</h1>;
+  return (
+    <Box width="400px" sx={{ width: { xl: "1488px" } }} m="auto">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/exercise/:id" element={<ExerciseDetail />} />
+      </Routes>
+      <Footer />
+    </Box>
+  );
 }
 
 export default App;
