@@ -2,6 +2,14 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import HeroBannerImage from "../assets/assets/images/banner.png";
 const HeroBanner = () => {
+  const handleClickScroll = () => {
+    const element = document.getElementById("exercises");
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Box
       sx={{ mt: { lg: "212px", xs: "70px" }, ml: { sm: "50px" } }}
@@ -28,6 +36,7 @@ const HeroBanner = () => {
         color="error"
         href="#exercises"
         sx={{ backgroundColor: "#ff2625", padding: "10px" }}
+        onClick={handleClickScroll}
       >
         Explore Exercises
       </Button>
